@@ -7,6 +7,7 @@ import com.MajorProject.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 
@@ -39,6 +40,16 @@ public class StudentService
             return null;
 
         return s;
+    }
+
+    public boolean delete(int id) {
+        if(studentRepository.deleteBystudentId(id)>0)
+            return true;
+        return false;
+    }
+
+    public List<Student> findAll() {
+            return studentRepository.findAll();
     }
 
 

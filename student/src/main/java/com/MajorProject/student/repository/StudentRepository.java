@@ -9,4 +9,6 @@ public interface StudentRepository extends MongoRepository<Student , Integer>
 {
 
     Student findStudentBystudentId(int id);
+
+    long deleteBystudentId(int id);
 }
